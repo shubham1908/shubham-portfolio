@@ -7,7 +7,7 @@ const SKILL_CATEGORIES = [
   {
     title: "Programming Languages",
     icon: <Code className="w-8 h-8" />,
-    color: "from-slate-200 to-slate-500", 
+    color: "from-slate-200 to-slate-500",
     skills: [
       { name: "Java", level: 95 },
       { name: "Python", level: 90 },
@@ -46,7 +46,7 @@ const SKILL_CATEGORIES = [
   {
     title: "Cloud & DevOps",
     icon: <Cloud className="w-8 h-8" />,
-    color: "from-slate-200 to-slate-500", 
+    color: "from-slate-200 to-slate-500",
     skills: [
       { name: "AWS", level: 85 },
       { name: "Google Cloud Platform", level: 80 },
@@ -66,22 +66,22 @@ const ACHIEVEMENTS = [
 ];
 
 const CORE_COMPETENCIES = [
-  "Microservices Architecture", 
-  "API Development", 
-  "Event-Driven Systems", 
-  "Database Optimization", 
-  "Cloud Computing", 
+  "Microservices Architecture",
+  "API Development",
+  "Event-Driven Systems",
+  "Database Optimization",
+  "Cloud Computing",
   "Performance Tuning"
 ];
 
 const TECH_TOOLS = [
-  "Apache Kafka", 
-  "Git", 
-  "Docker", 
-  "Kubernetes", 
-  "Linux", 
-  "Azure OpenAI", 
-  "SonarQube", 
+  "Apache Kafka",
+  "Git",
+  "Docker",
+  "Kubernetes",
+  "Linux",
+  "Azure OpenAI",
+  "SonarQube",
   "DDD"
 ];
 
@@ -100,7 +100,7 @@ const SECTION_CONFIG = {
     icon: Star
   },
   achievements: {
-    title: "Achievements", 
+    title: "Achievements",
     icon: Trophy
   }
 };
@@ -181,11 +181,11 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill, categoryColor, isActive, s
         {skill.level}%
       </span>
     </div>
-    
+
     <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden">
       <div
         className={`h-full bg-gradient-to-r ${categoryColor} rounded-full transition-all duration-1000 ease-out`}
-        style={{ 
+        style={{
           width: isActive ? `${skill.level}%` : '0%',
           transitionDelay: isActive ? `${skillIndex * 100}ms` : '0ms'
         }}
@@ -209,7 +209,7 @@ const CategoryHeader: React.FC<CategoryHeaderProps> = ({ category }) => (
 const NavigationButton: React.FC<NavigationButtonProps> = ({ direction, onClick, disabled }) => {
   const Icon = direction === 'prev' ? ChevronLeft : ChevronRight;
   const positionClass = direction === 'prev' ? '-left-4' : '-right-4';
-  
+
   return (
     <button
       onClick={onClick}
@@ -224,9 +224,8 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ direction, onClick,
 const SlideIndicator: React.FC<SlideIndicatorProps> = ({ isActive, onClick }) => (
   <button
     onClick={onClick}
-    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-      isActive ? 'bg-gray-400 scale-125' : 'bg-gray-600 hover:bg-gray-500'
-    }`}
+    className={`w-3 h-3 rounded-full transition-all duration-300 ${isActive ? 'bg-gray-400 scale-125' : 'bg-gray-600 hover:bg-gray-500'
+      }`}
   />
 );
 
@@ -234,15 +233,15 @@ const SkillsCarousel: React.FC<CarouselProps> = ({ categories, activeSlide, onSl
   <div className="relative mb-12">
     <div className="overflow-hidden rounded-2xl bg-gray-800/20 backdrop-blur-md border border-gray-700/30 shadow-xl relative">
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/3 via-transparent to-purple-500/3 pointer-events-none" />
-      
-      <div 
+
+      <div
         className="flex transition-all duration-600 ease-out"
         style={{ transform: `translateX(-${activeSlide * 100}%)` }}
       >
         {categories.map((category, index) => (
           <div key={index} className="w-full flex-shrink-0 p-8 relative">
             <CategoryHeader category={category} />
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {category.skills.map((skill, skillIndex) => (
                 <SkillCard
@@ -259,13 +258,13 @@ const SkillsCarousel: React.FC<CarouselProps> = ({ categories, activeSlide, onSl
       </div>
     </div>
 
-    <NavigationButton 
-      direction="prev" 
+    <NavigationButton
+      direction="prev"
       onClick={() => onSlideChange((activeSlide - 1 + categories.length) % categories.length)}
       disabled={isAnimating}
     />
-    <NavigationButton 
-      direction="next" 
+    <NavigationButton
+      direction="next"
       onClick={() => onSlideChange((activeSlide + 1) % categories.length)}
       disabled={isAnimating}
     />
@@ -285,7 +284,7 @@ const SkillsCarousel: React.FC<CarouselProps> = ({ categories, activeSlide, onSl
 const CompetencyCard: React.FC<CompetencyCardProps> = ({ competency, index }) => (
   <div
     className="flex items-center p-3 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 hover:from-blue-500/20 hover:to-purple-500/20 hover:border-blue-400/40 transition-all duration-300"
-    style={{animationDelay: `${index * 50}ms`}}
+    style={{ animationDelay: `${index * 50}ms` }}
   >
     <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mr-3 flex-shrink-0" />
     <span className="text-gray-200 text-sm font-medium">{competency}</span>
@@ -295,7 +294,7 @@ const CompetencyCard: React.FC<CompetencyCardProps> = ({ competency, index }) =>
 const AchievementCard: React.FC<AchievementCardProps> = ({ achievement, index }) => (
   <div
     className="p-4 rounded-lg bg-gray-800/50 border border-gray-600/50 hover:scale-105 transition-all duration-300 text-center"
-    style={{animationDelay: `${index * 200}ms`}}
+    style={{ animationDelay: `${index * 200}ms` }}
   >
     <div className={`text-2xl font-bold mb-2 bg-gradient-to-r ${achievement.color} bg-clip-text text-transparent`}>
       {achievement.title}
@@ -349,7 +348,7 @@ const Skills: React.FC = () => {
   }, [nextSlide]);
 
   return (
-    <section id="skills" className="py-20 bg-gray-900">
+    <section id="skills" className="scroll-mt-24 py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -360,7 +359,7 @@ const Skills: React.FC = () => {
           </p>
         </div>
 
-        <SkillsCarousel 
+        <SkillsCarousel
           categories={SKILL_CATEGORIES}
           activeSlide={activeSlide}
           onSlideChange={handleSlideChange}

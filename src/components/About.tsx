@@ -10,7 +10,7 @@ const HighlightCard: React.FC<{ item: Highlight }> = ({ item }) => (
 );
 
 const About: React.FC = () => (
-    <section id="about" className="py-20 bg-gray-900">
+    <section id="about" className="scroll-mt-24 py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Section Header */}
             <div className="text-center mb-16">
