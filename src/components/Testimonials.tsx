@@ -17,7 +17,7 @@ const Testimonials: React.FC = () => {
             title: "Technical Lead | Experienced Backend Engineering Fintech, Order, Payment | Passionate to build a sustainable tech team",
             company: "tiket.com",
             linkedinUrl: "https://www.linkedin.com/in/fahmi-azizi-09857961/",
-            image: "./src/assets/linkedin-fahmi.png",
+            image: "./linkedin-fahmi.png",
             content: "I had the pleasure of managing Shubham over the years, and their performance was really good. He can really work with minimum supervision, delivering high-quality work within tight deadlines, also he is person who can collaborate easily with anyone.",
             managementPeriod: "Direct manager • Jul 2022 - Jul 2024",
         }
