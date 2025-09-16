@@ -46,13 +46,13 @@ const Header = () => {
 
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://github.com" className="text-gray-300 hover:text-white transition-colors duration-300">
+            <a href="https://github.com/shubham1908" className="text-gray-300 hover:text-white transition-colors duration-300">
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com" className="text-gray-300 hover:text-white transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/sbm-gpt/" className="text-gray-300 hover:text-white transition-colors duration-300">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:contact@example.com" className="text-gray-300 hover:text-white transition-colors duration-300">
+            <a href="mailto:sbm.gupta1908@example.com" className="text-gray-300 hover:text-white transition-colors duration-300">
               <Mail size={20} />
             </a>
           </div>
